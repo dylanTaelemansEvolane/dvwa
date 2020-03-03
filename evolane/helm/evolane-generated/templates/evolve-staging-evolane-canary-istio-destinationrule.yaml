@@ -1,0 +1,7 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  creationTimestamp: null
+  name: evolve-staging-evolane-canary
+spec:
+  host: evolve-staging-evolane-canary.evolve-staging.svc.cluster.local

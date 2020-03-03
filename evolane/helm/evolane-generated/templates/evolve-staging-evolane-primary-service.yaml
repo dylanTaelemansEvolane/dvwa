@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2020-03-03T09:57:13Z"
+  labels:
+    app: evolane
+    chart: evolane-0.1.0
+    heritage: Tiller
+    release: evolve-staging-evolane
+  name: evolve-staging-evolane-primary
+  resourceVersion: "17920"
+  selfLink: /api/v1/namespaces/evolve-staging/services/evolve-staging-evolane
+  uid: 5b7f56fb-5d35-11ea-8232-42010a80010c
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: http
+  selector:
+    app: evolane-primary
+    release: evolve-staging-evolane
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

@@ -1,0 +1,7 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  creationTimestamp: null
+  name: evolve-staging-evolane-primary
+spec:
+  host: evolve-staging-evolane-primary.evolve-staging.svc.cluster.local
