@@ -14,6 +14,6 @@ spec:
   - route:
     - destination:
         host: evolve-staging-evolane-canary.evolve-staging.svc.cluster.local
+      weight: 100
     - destination:
         host: evolve-staging-evolane-primary.evolve-staging.svc.cluster.local
-      weight: 100
