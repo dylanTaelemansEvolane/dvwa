@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  creationTimestamp: null
+  name: evolve-dev-evolane
+spec:
+  gateways:
+  - public-gateway.istio-system
+  - mesh
+  hosts:
+  - evolve-dev-evolane.evolve-dev.34.68.28.42.xip.io
+  - evolve-dev-evolane
+  http:
+  - route:
+    - destination:
+        host: evolve-dev-evolane.evolve-dev.svc.cluster.local

@@ -1,0 +1,25 @@
+affinity: {}
+fullnameOverride: ""
+image: dylantaelemans/evolanenextlevel:latest
+ingress:
+  annotations:
+    ingress.kubernetes.io/proxy-body-size: 256m
+    kubernetes.io/ingress.class: evolane
+    kubernetes.io/tls-acme: "false"
+    nginx.org/client-max-body-size: 256m
+    nginx.org/proxy-connect-timeout: 130s
+    nginx.org/proxy-read-timeout: 120s
+  enabled: true
+  hosts: null
+  path: null
+  tls: []
+nameOverride: ""
+nodeSelector: {}
+port: "80"
+pullPolicy: IfNotPresent
+replicaCount: 1
+repository: docker.io/dylantaelemans/evolanenextlevel
+resources: {}
+tag: latest
+tolerations: []
+type: NodePort
