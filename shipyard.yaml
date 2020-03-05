@@ -1,10 +1,10 @@
 stages:
- - name: "dev-v2"
+ - name: "dev-v3"
    deployment_strategy: "direct"
    test_strategy: "functional"
- - name: "staging-v2"
+ - name: "staging-v3"
    deployment_strategy: "blue_green_service"
    test_strategy: "performance"
- - name: "production-v2"
+ - name: "production-v3"
    deployment_strategy: "blue_green_service"
    remediation_strategy: "automated"
