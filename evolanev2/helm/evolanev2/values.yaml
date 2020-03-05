@@ -1,0 +1,64 @@
+# Default values for evolanenextlevel.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+
+repository: "docker.io/dylantaelemans/evolanenextlevel"
+tag: "latest"
+pullPolicy: IfNotPresent
+
+nameOverride: ""
+fullnameOverride: ""
+
+
+type: "NodePort"
+port: "80"
+
+ingress:
+  enabled: true
+  annotations: 
+    kubernetes.io/tls-acme: "false"
+    kubernetes.io/ingress.class: "evolane"
+    ingress.kubernetes.io/proxy-body-size: "256m"
+    nginx.org/proxy-connect-timeout: "130s"
+    nginx.org/proxy-read-timeout: "120s"
+    nginx.org/client-max-body-size: "256m"
+  
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  path: 
+  hosts:
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+env:
+- name: KEPTN_PROJECT
+  value: "{{ .Chart.Name }}"
+- name: KEPTN_STAGE
+  valueFrom:
+    fieldRef:
+      fieldPath: "metadata.namespace"
+- name: KEPTN_SERVICE
+  value: "{{ .Values.SERVICE_PLACEHOLDER_C.service.name }}"
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #  cpu: 100m
+  #  memory: 128Mi
+  # requests:
+  #  cpu: 100m
+  #  memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
