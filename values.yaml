@@ -4,3 +4,5 @@ evolane-generated:
   enabled: false
 evolanev2:
   enabled: false
+evolanev2-generated:
+  enabled: false
