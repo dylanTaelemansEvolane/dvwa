@@ -2,3 +2,5 @@ evolane:
   enabled: false
 evolane-generated:
   enabled: false
+evolanev2:
+  enabled: false
